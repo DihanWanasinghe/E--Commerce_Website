@@ -1,8 +1,8 @@
 <?php
-$dbhost = 'localhost';
-$dbuser = 'root';
-$dbpass = '';
-$dbname = 'w2054987';
+$dbhost = getenv('DB_HOST') ?: 'localhost';
+$dbuser = getenv('DB_USER') ?: 'root';
+$dbpass = getenv('DB_PASS') ?: '';;
+$dbname = getenv('DB_NAME') ?: 'w2054987';
 //create a DB connection
 $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 //if the DB connection fails, display an error message and exit
